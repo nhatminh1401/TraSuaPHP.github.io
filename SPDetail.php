@@ -29,12 +29,27 @@ require "layout/header.php"
                 <div class="inner-column">
                     
 
-                        <h1>Welcome To <span>Live Dinner Restaurant</span></h1>
-                        <span><?php echo $row['tenSanPham']; ?></span>
-                        <h2><?php echo $row['tenLoaiSanPham']; ?></h2>
-                        <h3><?php echo $row['giaBan']; ?></h3>
-                        <a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Mua hàng</a>
-                        <a class="btn btn-lg btn-circle btn-outline-new-white" href="addCart?maSanPham=<?php echo $row['maSanPham']; ?>">Thêm vào giỏ hàng</a>
+                        <h1>Chào mừng <span>đến với CHNM</span></h1>
+                        <form action="cart.php" method="post">
+                        <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 80%"><span style="color:cornflowerblue; font-size: x-large;"><?php echo $row['tenSanPham']; ?></span> :</th>
+                                <th style="width: 40%"><span style="color:cornflowerblue; font-size: x-large;"><?php echo $row['giaBan']; ?></span></th>
+                                <th > <input type="number" name="soLuong" min="1" max="10" value="1"></th>
+                            </tr>
+                        </thead>
+                        </table>
+                        <input class="btn btn-lg btn-circle btn-outline-new-white"
+                             type="submit" name="addcart" value="Mua hàng">
+                        
+                            <!-- <input type="number" name="soLuong" min="1" max="10" value="1"> -->
+                            <input class="btn btn-lg btn-circle btn-outline-new-white"
+                             type="submit" name="addcart" value="Đặt hàng">
+                            <input type="hidden" name="hinhAnh" value="<?php echo $row['hinhAnh']; ?>">
+                            <input type="hidden" name="tenSanPham" value="<?php echo $row['tenSanPham']; ?>">
+                            <input type="hidden" name="giaBan" value="<?php echo $row['giaBan']; ?>">
+                         </form>
                     
                 </div>
             </div>

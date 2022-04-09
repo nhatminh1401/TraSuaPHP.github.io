@@ -114,10 +114,12 @@ require('layout/header.php');
 			<div class="card">
 				<div class="card-header">
 					<h3>Đăng nhập</h3>
+					<div style="line-height: 2.9">
 					<div class="d-flex justify-content-end social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>
 						<span><i class="fab fa-twitter-square"></i></span>
+					</div>
 					</div>
 				</div>
 				<div class="card-body">
@@ -152,7 +154,7 @@ require('layout/header.php');
 							<input type="checkbox">Nhớ mật khẩu
 						</div>
 						<div class="form-group">
-							<input type="submit" name="submit" value="Đăng nhập" class="btn float-right btn-warning">
+							<input  type="submit" name="login" value="Đăng nhập" class="btn float-right btn-warning">
 						</div>
 					</form>
 				</div>

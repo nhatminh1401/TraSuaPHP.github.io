@@ -17,34 +17,18 @@
                     <input name="tensp" type="text"> *
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label">Hình ảnh : </label>
-                <div class="controls">
-                    <input type="button" onclick="document.getElementById('images').style.display = 'block'" value="Kho ảnh của tôi" class="btn btn-default">
-                    <input type="hidden" name="file" value="<?php echo @$_GET['H'];?>">
-                    <h5>&nbsp;</h5>
-                    <div class="row-fluid">
-                        <?php
-                        $arr = explode("p", @$_GET['H']);
-                        foreach ($arr as $r):
-                            if (!empty($r)):
-                                ?>
-                                <div class="col-md-2 col-sm-3 col-xs-4" title="Đang chọn hình <?php echo "[" . $load->row($r)['hinhAnh'] . "] " . $load->row($r)['hinhAnh']; ?>">
-                                    <img src="template/templateUser/images/<?php echo $load->row($r)['url_image']; ?>" class="img-responsive"  width="60" height="60">
-                                </div>
-                                <?php
-                            endif;
-                        endforeach;
-                        ?>
-                    </div>
-                </div>
+            
+            <!-- <div class="control-group">
+            <label class="control-label">
+            <div class="controls">
+                <form method="POST" action="upload.php" enctype="multipart/form-data"> 
+                    <input type="hidden" name="size" value="1000000"> 
+                    <input type="file" name="image"> 
+                </form> 
             </div>
-            <div class="control-group">
-                <label class="control-label">Nội dung : </label>
-                <div class="controls">
-                    <textarea name="noidung" style="width: 90%; height: 15%;" ></textarea> *
-                </div>
-            </div>
+            </label>
+            </div> -->
+
             <div class="control-group">
                 <label class="control-label">Giá bán: </label>
                 <div class="controls">

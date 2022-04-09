@@ -53,8 +53,8 @@ class spLietke extends DB {
         }
     }
 
-    public function table_chitiethoadon() {
-        $sql = 'SELECT * FROM cthd  ' ;
+    public function table_chitiethoadon($SP_BD) {
+        $sql = 'SELECT * FROM cthd order by maHoaDon desc limit ' . $SP_BD . ',5 ' ;
         if (@$this->select($sql))
             return $this->select($sql);
     }

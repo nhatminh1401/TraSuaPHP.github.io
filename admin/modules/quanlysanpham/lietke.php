@@ -30,6 +30,8 @@
             <td><strong>Tên sản phẩm</strong></td>
             <td><strong>Giá bán</strong></td>
             <td><strong>Hình ảnh</strong></td>
+            <td><strong>Sửa</strong></td>
+            <td><strong>Xóa</strong></td>
             
         </tr>
         <?php
@@ -43,6 +45,21 @@
                 <td>
                     <img src="template/templateUser/images/<?php echo $row['hinhAnh']; ?>" class="img-fluid" alt="Image" style="height: 60px;">
                 </td>
+                <td>
+                    <a href="index.php?quanly=sanpham&ac=sua&id=<?php echo $row['maSanPham'] ?>&H=<?php echo $row['hinhAnh'] ?>" class="btn btn-default">
+                        <center>
+                            <span class="icon icon-pencil"></span> Sửa
+                        </center>
+                    </a>
+                </td>
+                <td>
+                    <a href="modules/quanlysanpham/xuly.php?id=<?php echo $row['maSanPham'] ?>" class="btn btn-default">
+                        <center>
+                            <span class="icon icon-cut"></span>Xóa
+                        </center>
+                    </a>
+                </td>
+
             </tr>
             <?php
         endforeach;

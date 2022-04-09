@@ -22,8 +22,8 @@ class xulyLoaiSP extends DB {
         if (isset($_GET['id'])) {
             $id = "'" . $_GET['id'] . "'";
             if (@$_POST) {
-                $tenloaisp = '"' . $_POST['loaiSanPham'] . '"';
-                $sql = 'update loaiSanPham set tenLoaiSanPham =' . $tenloaisp . ' where loaiSanPham = ' . $id . '';
+                $tenloaisp = '"' . $_POST['loaisp'] . '"';
+                $sql = 'update loaiSanPham set tenLoaiSanPham =' . $tenloaisp . ' where maLoaiSanPham = ' . $id . '';
                 if (@$this->querry($sql)) {
                     header('location:../../index.php?quanly=loaisp&ac=lietke&tt=<div class="alert alert-success"><strong>Sửa!</strong> Đã lưu loại sản phẩm ' . $tenloaisp . ' thành công.</div>');
                 } else {

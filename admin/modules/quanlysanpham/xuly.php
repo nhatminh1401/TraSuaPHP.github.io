@@ -7,16 +7,18 @@ class xulySanPham extends DB {
     public function themSanPham() {
         if (@$_POST) {
             $tensp = "'" . $_POST['tensp'] . "'";
-            $hinhanh = "'" . $_POST['file'] . "'";
+            // $hinhanh = "'" . $_POST['image'] . "'";
+            $malsp = "'" . $_POST['loaiSanPham'] . "'";
+            $giaBan = "'" . $_POST['giaBan'] . "'";
             
-            $sql = 'insert into products (name_product,image_product,price_product,sale_product,sl_product,info_product,id_type,id_brand) value(' . $tensp . ',' . $hinhanh . ')';
+            $sql = 'insert into sanpham (maLoaiSanPham,tenSanPham,giaBan) value('.$malsp.',' . $tensp . ','.$giaBan.')';
             if (@$this->querry($sql)) {
                 header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-success"><strong>Thêm!</strong> Đã lưu thêm sản phẩm mới thành công.</div>');
             } else {
-                header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui long thử lại sau.</div>');
+                header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui lòng thử lại sau.</div>');
             }
         } else {
-            header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui long thử lại sau.</div>');
+            header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui lòng thử lại sau.</div>');
         }
     }
 
@@ -29,13 +31,13 @@ class xulySanPham extends DB {
                 if (@$this->querry($sql)) {
                     header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-success"><strong>Sửa!</strong> Đã lưu chỉnh sửa sản phẩm ' . $tensp . ' thành công.</div>');
                 } else {
-                    header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui long thử lại sau.</div>');
+                    header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui lòng thử lại sau.</div>');
                 }
             } else {
-                header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui long thử lại sau.</div>');
+                header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui lòng thử lại sau.</div>');
             }
         } else {
-            header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui long thử lại sau.</div>');
+            header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui lòng thử lại sau.</div>');
         }
     }
 
@@ -46,10 +48,10 @@ class xulySanPham extends DB {
             if (@$this->querry($sql)) {
                 header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-success"><strong>Xóa!</strong> Đã xóa sản phẩm ' . $id . ' thành công.</div>');
             } else {
-                header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui long thử lại sau.</div>');
+                header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui lòng thử lại sau.</div>');
             }
         } else {
-            header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui long thử lại sau.</div>');
+            header('location:../../index.php?quanly=sanpham&ac=lietke&tt=<div class="alert alert-danger"><strong>Lỗi!</strong> Đã xảy ra vấn đề. Vui lòng thử lại sau.</div>');
         }
     }
 

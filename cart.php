@@ -5,6 +5,7 @@ require "layout/header.php"
 $conn = mysqli_connect('localhost', 'root', '', 'wsts-1');
 require 'DBconnext.php';
 include "thuvien.php";
+session_start();
 if (!isset($_SESSION['giohang'])) $_SESSION['giohang'] = [];
 //Xoá toàn bộ giỏ hàng
 if (isset($_GET['delcart']) && ($_GET['delcart'] == 1)) unset($_SESSION['giohang']);
@@ -23,7 +24,7 @@ if (isset($_POST['addcart']) && ($_POST['addcart'])) {
     for ($i = 0; $i < sizeof($_SESSION['giohang']); $i++) {
         if ($_SESSION['giohang'][$i][1] == $tensp) {
             $fl += 1;
-            $soluongnew = $soLuong + $_SESSION['giohang'][$i][3];
+            $soluongnew = $soluong + $_SESSION['giohang'][$i][3];
             $_SESSION['giohang'][$i][3] = $soluongnew;
             break;
         }
@@ -36,7 +37,6 @@ if (isset($_POST['addcart']) && ($_POST['addcart'])) {
     }
 }
 
-
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,6 @@ if (isset($_POST['addcart']) && ($_POST['addcart'])) {
 </head>
 
 <body>
-    <form action="bill.php" method="post">
     <!-- Start All Pages -->
     <div class="all-page-title page-breadcrumb">
         <div class="container text-center">
@@ -85,7 +84,6 @@ if (isset($_POST['addcart']) && ($_POST['addcart'])) {
 
                 </tr>
             </thead>
-            
             <?php showgiohang(); ?>
             <td>
                 <a href="cart.php?delcart=1" class="btn btn-warning"><i class="fa fa-angle-left"></i> Xoá giỏ hàng</a>
@@ -100,46 +98,7 @@ if (isset($_POST['addcart']) && ($_POST['addcart'])) {
 
         </table>
     </div>
-    <div class="row">
-				<div class="col-md-12">
-					<h2>Thông tin khách hàng</h2>
-				</div>
-				<div class="col-md-12">
-					
-						<div class="row">
-							<div class="col-md-6">
-                            <div class="form-group">
-									<label for="exampleFormControlInput4">Email <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" name="email" required>
-								</div>
-								<div class="form-group">
-									<label for="exampleFormControlInput1">Họ tên <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" name="tenNguoiMua" required>
-								</div>
-								<div class="form-group">
-									<label for="exampleFormControlInput2">Số điện thoại <span class="text-danger">*</span></label>
-									<input type="number" class="form-control" name="sdt" required>
-								</div>
-								<div class="form-group">
-									<label for="exampleFormControlInput3">Địa chỉ <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" name="diaChi" required>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="exampleFormControlTextarea1">Ghi chú</label>
-									<textarea class="form-control" name="ghiChu" required></textarea>
-								</div>
-								<div class="form-group">
-									<button type="submit"  value="ĐỒNG Ý ĐẶT HÀNG" name="dongydathang" class="btn btn-primary">Đặt hàng</button>
-								</div>
-                                
-							</div>
-						</div>
-					
-				</div>
-			</div>
-            </form>
+
 </body>
 
 </html>
