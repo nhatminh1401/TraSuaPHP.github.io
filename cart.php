@@ -66,7 +66,7 @@ if (isset($_POST['addcart']) && ($_POST['addcart'])) {
                     <h2>Chi tiết giỏ hàng</h2>
                 </div>
                 <div class="col-12">
-                    <a href="index.php">Trang chủ</a> <a href="">sản phẩm</a>
+                    <a href="index.php">Trang chủ sản phẩm</a>
                 </div>
             </div>
         </div>

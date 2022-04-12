@@ -31,7 +31,7 @@ require "layout/header.php"
                 <div class="col-lg-12">
                     <div class="heading-title text-center">
                         <h2>Special Menu</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                        <p>Món ngon đang đợi bạn</p>
                     </div>
                 </div>
             </div>

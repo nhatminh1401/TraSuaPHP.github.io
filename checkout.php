@@ -11,12 +11,12 @@ function dathang()
 	if (isset($_SESSION["nguoidung"])) {
 		echo '<div class="row">
         <div class="col-md-12">
-            <h2>Thông tin khách hàng</h2>
+            <h2 style="margin-left: 550px;">Thông tin khách hàng</h2>
         </div>
         <div class="col-md-12">
             
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="margin-left: 355px;">
                     <div class="form-group">
                             <label for="exampleFormControlInput4">Email <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="email" value="'.$_SESSION["nguoidung"][1].'" required>
@@ -33,8 +33,8 @@ function dathang()
                             <label for="exampleFormControlInput3">Địa chỉ <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" name="diaChi" value="'.$_SESSION["nguoidung"][4].'" required>
                         </div>
-                    </div>
-                    <div class="col-md-6">
+                    
+                    
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Ghi chú</label>
                             <textarea class="form-control" name="ghiChu" required></textarea>
